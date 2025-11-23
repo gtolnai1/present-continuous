@@ -173,11 +173,13 @@ function checkAnswer() {
   const userWords = userSentence.map(item => item.word);
   const correctWords = currentSentence.correct;
   const feedback = document.getElementById("feedback");
-  document.getElementById("check-btn").disabled = true;
+ // document.getElementById("check-btn").disabled = true;
   document.getElementById("next-btn").style.display = "inline-block";
   total++;
   if (arraysEqual(userWords, correctWords)) {
     score++;
+    document.getElementById('check-btn').disabled = true; // Only disable after correct answer
+    document.getElementById('next-btn').style.display = 'inline-block';
     feedback.innerHTML = "✅ Correct!";
     feedback.className = "feedback-correct";
   } else if (userWords.length !== correctWords.length) {
@@ -217,3 +219,4 @@ document.getElementById("next-btn").onclick = nextSentence;
 
 // Initial render
 window.onload = renderSentence;
+
