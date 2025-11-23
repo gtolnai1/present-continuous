@@ -196,7 +196,6 @@ function checkAnswer() {
   updateScorePanel();
 }
 
-
 function arraysEqual(a, b) {
   if (a.length !== b.length) return false;
   for (let i = 0; i < a.length; i++) {
@@ -224,5 +223,6 @@ document.getElementById("next-btn").onclick = nextSentence;
 
 // Initial render
 window.onload = renderSentence;
+
 
 
