@@ -49,6 +49,11 @@ p {
   margin: 20px auto;
   text-align: center;
   padding: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  max-width: 100%;
 }
 
 .word-btn {
@@ -63,6 +68,8 @@ p {
   transition: background 0.2s;
   color: #2D1B0F;
   font-weight: 500;
+  min-width: 48px;
+  box-sizing: border-box;
 }
 
 .word-btn:hover {
@@ -84,10 +91,18 @@ p {
   color: #2D1B0F;
   font-weight: 600;
   padding: 10px;
+  word-break: break-word;
 }
 
-#check-btn, #restart-btn {
-  margin: 15px 5px;
+#nav-btns {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 15px auto 0 auto;
+  flex-wrap: wrap;
+}
+
+#check-btn, #restart-btn, #next-btn {
   padding: 10px 20px;
   font-size: 16px;
   background: #fff;
@@ -97,6 +112,7 @@ p {
   color: #2D1B0F;
   font-weight: 600;
   transition: all 0.2s;
+  margin: 0;
 }
 
 #check-btn:hover, #restart-btn:hover {
@@ -104,26 +120,10 @@ p {
   border-color: #2D1B0F;
 }
 
-#feedback { 
-  font-weight: bold; 
-  margin: 10px auto;
-  text-align: center;
-  font-size: 18px;
-  padding: 10px;
-  min-height: 25px;
-}
-
 #next-btn { 
-  margin: 15px 5px; 
-  padding: 10px 20px; 
-  font-size: 16px;
   background: #5A3A1B;
   border: 2px solid #5A3A1B;
-  border-radius: 6px;
-  cursor: pointer;
   color: #fff;
-  font-weight: 600;
-  transition: all 0.2s;
 }
 
 #next-btn:hover {
@@ -139,18 +139,77 @@ div {
   text-align: center;
 }
 
+#feedback { 
+  font-weight: bold; 
+  margin: 10px auto;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px;
+  min-height: 25px;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
 @media (max-width: 600px) {
   body {
-    padding: 20px 15px;
+    padding: 10px 2vw;
   }
-  
+  h2 {
+    font-size: 1.2em;
+    margin: 12px auto;
+  }
+  #progress-container {
+    height: 14px;
+    max-width: 100vw;
+    margin: 10px auto 8px auto;
+  }
+  #sentence-area {
+    padding: 8px 0;
+    gap: 5px;
+  }
   .word-btn {
-    font-size: 16px;
-    padding: 8px 12px;
-    margin: 3px;
+    font-size: 15px;
+    padding: 7px 8px;
+    margin: 2px;
+    min-width: 38px;
   }
-  
   #user-sentence {
-    font-size: 18px;
+    font-size: 16px;
+    padding: 7px 2px;
+    min-height: 32px;
+  }
+  #nav-btns {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #E8D4CFee;
+    padding: 8px 0 8px 0;
+    z-index: 100;
+    box-shadow: 0 -2px 8px #0001;
+    gap: 6px;
+  }
+  #feedback {
+    font-size: 16px;
+    padding: 7px 2px;
+    min-height: 20px;
+  }
+  #check-btn, #restart-btn, #next-btn {
+    font-size: 15px;
+    padding: 8px 10px;
+    min-width: 90px;
+  }
+}
+
+@media (max-width: 400px) {
+  #nav-btns {
+    flex-direction: column;
+    gap: 5px;
+    padding: 6px 0;
+  }
+  #check-btn, #restart-btn, #next-btn {
+    width: 90vw;
+    min-width: unset;
+    margin: 0 auto;
   }
 }
