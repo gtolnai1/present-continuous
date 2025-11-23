@@ -20,79 +20,62 @@ const sentences = [
   { type: "affirmative", correct: ["My", "mom", "is", "cleaning", "the", "house", "."], distractors: [ "fly", "?"] },
   { type: "affirmative", correct: ["The", "teacher", "is", "writing", "on", "the", "board", "."], distractors: ["dog", "?"] },
   { type: "affirmative", correct: ["Students", "are", "taking", "a", "test", "."], distractors: ["banana", "laugh", "?"] },
-  { type: "affirmative", correct: ["I", "am", "working", "on", "my", "computer", "."], distractors: ["fish", "?"] },
-  { type: "affirmative", correct: ["She", "is", "talking", "on", "the", "phone", "."], distractors: [ "sleep", "?"] },
-  { type: "affirmative", correct: ["It", "is", "raining", "outside", "."], distractors: ["happy", "milk", "?"] },
-  { type: "affirmative", correct: ["The", "sun", "is", "shining", "."], distractors: ["pizza", "fast", "?"] },
-  { type: "affirmative", correct: ["Children", "are", "playing", "."], distractors: ["cold", "pen", "?"] },
-  { type: "affirmative", correct: ["My", "brother", "is", "sleeping", "."], distractors: ["orange", "?"] },
-  { type: "affirmative", correct: ["We", "are", "eating", "lunch", "."], distractors: ["mouse", "loud", "?"] },
-  { type: "affirmative", correct: ["The", "baby", "is", "crying", "."], distractors: ["heavy", "cake", "?"] },
+  { type: "affirmative", correct: ["I", "am", "working", "on", "my", "project", "."], distractors: ["run", "cat", "?"] },
+  { type: "affirmative", correct: ["He", "is", "fixing", "his", "bike", "."], distractors: ["dog", "jump", "?"] },
+  { type: "affirmative", correct: ["We", "are", "shopping", "."], distractors: ["sing", "banana", "?"] },
+  { type: "affirmative", correct: ["She", "is", "painting", "a", "picture", "."], distractors: ["swim", "car", "?"] },
+  { type: "affirmative", correct: ["They", "are", "dancing", "."], distractors: ["bike", "dance", "?"] },
+  { type: "affirmative", correct: ["You", "are", "listening", "to", "music", "."], distractors: ["tree", "walk", "?"] },
+  { type: "affirmative", correct: ["My", "dad", "is", "washing", "the", "car", "."], distractors: ["book", "blue", "?"] },
+  { type: "affirmative", correct: ["The", "children", "are", "playing", "in", "the", "park", "."], distractors: ["run", "?"] },
 
   // Negative (17)
-  { type: "negative", correct: ["I", "am", "not", "watching", "TV", "."], distractors: ["happy", "dog", "?"] },
-  { type: "negative", correct: ["She", "is", "not", "cooking", "today", "."], distractors: ["run", "blue", "?"] },
-  { type: "negative", correct: ["He", "is", "not", "working", "now", "."], distractors: ["cat", "big", "?"] },
-  { type: "negative", correct: ["We", "are", "not", "playing", "football", "."], distractors: ["book", "hot", "?"] },
-  { type: "negative", correct: ["They", "are", "not", "studying", "."], distractors: ["car", "small", "?"] },
-  { type: "negative", correct: ["You", "are", "not", "listening", "to", "music", "."], distractors: ["tree", "cold", "?"] },
-  { type: "negative", correct: ["My", "sister", "is", "not", "reading", "."], distractors: ["fish", "new", "?"] },
-  { type: "negative", correct: ["The", "children", "are", "not", "sleeping", "."], distractors: ["red", "fast", "?"] },
-  { type: "negative", correct: ["I", "am", "not", "drinking", "coffee", "."], distractors: ["chair", "old", "?"] },
-  { type: "negative", correct: ["She", "is", "not", "talking", "on", "the", "phone", "."], distractors: ["green", "slow", "?"] },
-  { type: "negative", correct: ["We", "are", "not", "walking", "to", "school", "."], distractors: ["milk", "long", "?"] },
-  { type: "negative", correct: ["It", "is", "not", "snowing", "."], distractors: ["yellow", "heavy", "?"] },
-  { type: "negative", correct: ["The", "dog", "is", "not", "barking", "."], distractors: ["pen", "quiet", "?"] },
-  { type: "negative", correct: ["My", "dad", "is", "not", "driving", "."], distractors: ["cake", "thin", "?"] },
-  { type: "negative", correct: ["The", "students", "are", "not", "writing", "."], distractors: ["orange", "easy", "?"] },
-  { type: "negative", correct: ["You", "are", "not", "wearing", "a", "coat", "."], distractors: ["mouse", "short", "?"] },
-  { type: "negative", correct: ["They", "are", "not", "eating", "dinner", "."], distractors: ["loud", "clean", "?"] },
+  { type: "negative", correct: ["I", "am", "not", "sleeping", "."], distractors: ["run", "cat", "?"] },
+  { type: "negative", correct: ["She", "is", "not", "eating", "pizza", "."], distractors: ["dog", "jump", "?"] },
+  { type: "negative", correct: ["They", "are", "not", "watching", "TV", "."], distractors: ["sing", "banana", "?"] },
+  { type: "negative", correct: ["We", "are", "not", "playing", "football", "."], distractors: ["swim", "car", "?"] },
+  { type: "negative", correct: ["He", "is", "not", "reading", "a", "book", "."], distractors: ["bike", "dance", "?"] },
+  { type: "negative", correct: ["You", "are", "not", "drawing", "."], distractors: ["tree", "walk", "?"] },
+  { type: "negative", correct: ["My", "mom", "is", "not", "cooking", "dinner", "."], distractors: [ "fly", "?"] },
+  { type: "negative", correct: ["The", "teacher", "is", "not", "writing", "on", "the", "board", "."], distractors: ["dog", "?"] },
+  { type: "negative", correct: ["Students", "are", "not", "taking", "a", "test", "."], distractors: ["banana", "laugh", "?"] },
+  { type: "negative", correct: ["I", "am", "not", "working", "on", "my", "project", "."], distractors: ["run", "cat", "?"] },
+  { type: "negative", correct: ["He", "is", "not", "fixing", "his", "bike", "."], distractors: ["dog", "jump", "?"] },
+  { type: "negative", correct: ["We", "are", "not", "shopping", "."], distractors: ["sing", "banana", "?"] },
+  { type: "negative", correct: ["She", "is", "not", "painting", "a", "picture", "."], distractors: ["swim", "car", "?"] },
+  { type: "negative", correct: ["They", "are", "not", "dancing", "."], distractors: ["bike", "dance", "?"] },
+  { type: "negative", correct: ["You", "are", "not", "listening", "to", "music", "."], distractors: ["tree", "walk", "?"] },
+  { type: "negative", correct: ["My", "dad", "is", "not", "washing", "the", "car", "."], distractors: ["book", "blue", "?"] },
+  { type: "negative", correct: ["The", "children", "are", "not", "playing", "in", "the", "park", "."], distractors: ["run", "?"] },
 
   // Question (16)
-  { type: "question", correct: ["Are", "you", "watching", "TV", "?"], distractors: ["book", "red", "."] },
-  { type: "question", correct: ["Is", "she", "cooking", "dinner", "?"], distractors: ["run", "big", "."] },
-  { type: "question", correct: ["Are", "they", "studying", "English", "?"], distractors: ["cat", "hot", "."] },
-  { type: "question", correct: ["Is", "he", "working", "today", "?"], distractors: ["tree", "new", "."] },
-  { type: "question", correct: ["Are", "we", "going", "to", "the", "park", "?"], distractors: ["fish", "cold", "."] },
-  { type: "question", correct: ["Is", "it", "raining", "?"], distractors: ["chair", "fast", "."] },
-  { type: "question", correct: ["Are", "you", "drinking", "coffee", "?"], distractors: ["dog", "small", "."] },
-  { type: "question", correct: ["Is", "the", "baby", "sleeping", "?"], distractors: ["green", "old", "."] },
-  { type: "question", correct: ["Are", "the", "children", "playing", "outside", "?"], distractors: ["milk", "quiet", "."] },
-  { type: "question", correct: ["Is", "your", "mom", "cleaning", "?"], distractors: ["yellow", "easy", "."] },
-  { type: "question", correct: ["Are", "you", "listening", "to", "music", "?"], distractors: ["pen", "heavy", "."] },
-  { type: "question", correct: ["Is", "the", "teacher", "writing", "?"], distractors: ["cake", "long", "."] },
-  { type: "question", correct: ["Are", "they", "walking", "?"], distractors: ["orange", "thin", "."] },
-  { type: "question", correct: ["Is", "she", "talking", "on", "the", "phone", "?"], distractors: ["mouse", "loud", "."] },
-  { type: "question", correct: ["Are", "you", "wearing", "a", "jacket", "?"], distractors: ["blue", "short", "."] },
-  { type: "question", correct: ["Is", "the", "sun", "shining", "?"], distractors: ["happy", "clean", "."] }
+  { type: "question", correct: ["Am", "I", "eating", "an", "apple", "?"], distractors: ["run", "cat", "."] },
+  { type: "question", correct: ["Is", "she", "reading", "a", "book", "?"], distractors: ["dog", "jump", "."] },
+  { type: "question", correct: ["Are", "they", "playing", "football", "?"], distractors: ["sing", "banana", "."] },
+  { type: "question", correct: ["Are", "we", "drawing", "?"], distractors: ["swim", "car", "."] },
+  { type: "question", correct: ["Is", "he", "writing", "?"], distractors: ["bike", "dance", "."] },
+  { type: "question", correct: ["Are", "you", "singing", "?"], distractors: ["tree", "walk", "."] },
+  { type: "question", correct: ["Am", "I", "cooking", "dinner", "?"], distractors: ["book", "blue", "."] },
+  { type: "question", correct: ["Is", "she", "watching", "TV", "?"], distractors: ["run", "."] },
+  { type: "question", correct: ["Is", "he", "driving", "to", "work", "?"], distractors: ["apple", "sing", "."] },
+  { type: "question", correct: ["Are", "we", "walking", "?"], distractors: ["dance", "red", "."] },
+  { type: "question", correct: ["Are", "they", "studying", "English", "?"], distractors: ["car", "jump", "."] },
+  { type: "question", correct: ["Are", "you", "drinking", "coffee", "?"], distractors: ["tree", "swim", "."] },
+  { type: "question", correct: ["Is", "my", "mom", "cleaning", "the", "house", "?"], distractors: [ "fly", "."] },
+  { type: "question", correct: ["Is", "the", "teacher", "writing", "on", "the", "board", "?"], distractors: ["dog", "."] },
+  { type: "question", correct: ["Are", "students", "taking", "a", "test", "?"], distractors: ["banana", "laugh", "."] },
+  { type: "question", correct: ["Am", "I", "working", "on", "my", "project", "?"], distractors: ["run", "cat", "."] }
 ];
 
-// Instruction data for each type
-const instructionData = {
-  affirmative: {
-    text: 'Form an <strong>affirmative</strong> sentence in the Present Continuous. Alkoss állító mondatot! ',
-    class: 'instruction-affirmative',
-    icon: '🟢'
-  },
-  negative: {
-    text: 'Form a <strong>negative</strong> sentence in the Present Continuous. Alkoss tagadó mondatot!',
-    class: 'instruction-negative',
-    icon: '🔴'
-  },
-  question: {
-    text: 'Form a <strong>question</strong> in the Present Continuous. alkoss kérdő mondatot!',
-    class: 'instruction-question',
-    icon: '🟡'
-  }
-};
-
-let currentSentence = {};
-let userSentence = [];
-let usedIndexes = [];
+let currentSentenceIndex = 0;
+let selectedWords = [];
 let wordButtons = [];
-let currentIndex = 0;
-let score = 0;
-let total = 0;
+const sentenceArea = document.getElementById("sentence-area");
+const userSentence = document.getElementById("user-sentence");
+const checkBtn = document.getElementById("check-btn");
+const nextBtn = document.getElementById("next-btn");
+const feedback = document.getElementById("feedback");
+const instructionBox = document.getElementById("instruction-box");
 
 function shuffle(array) {
   let arr = array.slice();
@@ -103,97 +86,76 @@ function shuffle(array) {
   return arr;
 }
 
-function pickSentence() {
-  if (usedIndexes.length === sentences.length) usedIndexes = [];
-  let idx;
-  do {
-    idx = Math.floor(Math.random() * sentences.length);
-  } while (usedIndexes.includes(idx));
-  usedIndexes.push(idx);
-  currentIndex = usedIndexes.length;
-  return sentences[idx];
-}
-
-function updateInstruction(type) {
-  const box = document.getElementById("instruction-box");
-  const data = instructionData[type];
-  if (box && data) {
-    box.className = data.class;
-    box.innerHTML = `<span class="instruction-icon">${data.icon}</span> <span id="instruction-text">${data.text}</span>`;
-  }
-}
-
 function renderSentence() {
-  currentSentence = pickSentence();
-  userSentence = [];
-  document.getElementById("feedback").textContent = "";
-  document.getElementById("user-sentence").textContent = "";
-  document.getElementById("next-btn").style.display = "none";
-  document.getElementById("check-btn").disabled = false;
-  updateInstruction(currentSentence.type);
-
-  let words = currentSentence.correct.concat(currentSentence.distractors);
-  words = shuffle(words);
-  const area = document.getElementById("sentence-area");
-  area.innerHTML = "";
+  sentenceArea.innerHTML = "";
+  userSentence.innerHTML = "";
+  feedback.innerHTML = "";
+  selectedWords = [];
   wordButtons = [];
-  words.forEach((word, i) => {
+  checkBtn.disabled = false;
+  // Next button is always enabled and visible
+  nextBtn.disabled = false;
+
+  const sentence = sentences[currentSentenceIndex];
+  let words = sentence.correct.concat(sentence.distractors);
+  words = shuffle(words);
+
+  words.forEach((word, idx) => {
     const btn = document.createElement("button");
+    btn.className = "word-btn";
     btn.textContent = word;
-    btn.className = "word-btn" + (word === "." || word === "?" ? " word-punct" : "");
-    btn.onclick = () => selectWord(i, word, btn);
-    btn.setAttribute("aria-label", word);
-    area.appendChild(btn);
+    btn.addEventListener("click", () => selectWord(word, idx));
     wordButtons.push(btn);
+    sentenceArea.appendChild(btn);
   });
 
-  updateScorePanel();
-  updateUserSentence();
+  // Show dynamic instruction
+  let instruction = "";
+  if (sentence.type === "affirmative") {
+    instruction = "Make an <b>affirmative</b> sentence.";
+  } else if (sentence.type === "negative") {
+    instruction = "Make a <b>negative</b> sentence.";
+  } else if (sentence.type === "question") {
+    instruction = "Make a <b>question</b>.";
+  }
+  instructionBox.innerHTML = instruction;
 }
 
-function selectWord(idx, word, btn) {
-  if (btn.classList.contains("selected")) {
-    btn.classList.remove("selected");
-    const pos = userSentence.findIndex(item => item.idx === idx);
-    if (pos !== -1) userSentence.splice(pos, 1);
+function selectWord(word, idx) {
+  // If already selected, remove from selectedWords
+  const selectedIdx = selectedWords.indexOf(word + "|" + idx);
+  if (selectedIdx > -1) {
+    selectedWords.splice(selectedIdx, 1);
+    wordButtons[idx].classList.remove("selected");
   } else {
-    btn.classList.add("selected");
-    userSentence.push({ idx, word });
+    selectedWords.push(word + "|" + idx);
+    wordButtons[idx].classList.add("selected");
   }
   updateUserSentence();
 }
 
 function updateUserSentence() {
-  const userWords = userSentence.map(item => item.word);
-  const display = userWords.length ? userWords.join(" ") : "Click the words in order to build your sentence.";
-  document.getElementById("user-sentence").textContent = display;
+  // Only show the words (not the indices)
+  const words = selectedWords.map(wi => wi.split("|")[0]);
+  userSentence.textContent = words.join(" ");
 }
 
 function checkAnswer() {
-  const userWords = userSentence.map(item => item.word);
-  const correctWords = currentSentence.correct;
-  const feedback = document.getElementById("feedback");
-  const checkBtn = document.getElementById("check-btn");
-  const nextBtn = document.getElementById("next-btn");
-  total++;
-  if (arraysEqual(userWords, correctWords)) {
-    score++;
-    feedback.innerHTML = "✅ Correct!";
-    feedback.className = "feedback-correct";
-    checkBtn.disabled = true; // Only disable when correct
-    nextBtn.style.display = "inline-block";
-  } else if (userWords.length !== correctWords.length) {
-    feedback.innerHTML = "This is not the correct solution. Try again";
-    feedback.className = "feedback-incorrect";
-    checkBtn.disabled = false; // Keep enabled after incomplete/incorrect
-    nextBtn.style.display = "none";
-  } else {
-    feedback.innerHTML = `❌ Incorrect.<br>Your answer: <span class="user-answer">${userWords.join(" ")}</span><br>Correct answer: <span class="correct-answer">${correctWords.join(" ")}</span>`;
-    feedback.className = "feedback-incorrect";
-    checkBtn.disabled = false; // Keep enabled after incorrect
-    nextBtn.style.display = "none";
+  const sentence = sentences[currentSentenceIndex];
+  const userWords = selectedWords.map(wi => wi.split("|")[0]);
+  if (userWords.length === 0) {
+    feedback.innerHTML = "Please select words to form a sentence.";
+    // Keep checkBtn enabled
+    return;
   }
-  updateScorePanel();
+  if (arraysEqual(userWords, sentence.correct)) {
+    feedback.innerHTML = "<span style='color:green'>Correct!</span>";
+    // Keep checkBtn enabled for further attempts if desired
+    // Next button is always available
+  } else {
+    feedback.innerHTML = "<span style='color:red'>Try again!</span>";
+    // Keep checkBtn enabled so students can try again
+  }
 }
 
 function arraysEqual(a, b) {
@@ -204,25 +166,14 @@ function arraysEqual(a, b) {
   return true;
 }
 
-function clearAnswer() {
-  userSentence = [];
-  wordButtons.forEach(btn => btn.classList.remove("selected"));
-  updateUserSentence();
-}
-
 function nextSentence() {
+  currentSentenceIndex = (currentSentenceIndex + 1) % sentences.length;
   renderSentence();
 }
 
-function updateScorePanel() {
-  // Optional: Add a score/progress display if you add it to your HTML
-}
+checkBtn.addEventListener("click", checkAnswer);
+nextBtn.addEventListener("click", nextSentence);
 
-document.getElementById("check-btn").onclick = checkAnswer;
-document.getElementById("next-btn").onclick = nextSentence;
-
-// Initial render
-window.onload = renderSentence;
-
-
-
+// On load, always show nextBtn
+nextBtn.style.display = "inline-block";
+renderSentence();
