@@ -67,6 +67,17 @@ const sentences = [
   { type: "question", correct: ["Am", "I", "working", "on", "my", "project", "?"], distractors: ["run", "cat", "."] }
 ];
 
+// Shuffle the questions at the start
+function shuffle(array) {
+  let arr = array.slice();
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+const shuffledSentences = shuffle(sentences);
 let currentSentenceIndex = 0;
 let selectedWords = [];
 let wordButtons = [];
@@ -76,15 +87,6 @@ const checkBtn = document.getElementById("check-btn");
 const nextBtn = document.getElementById("next-btn");
 const feedback = document.getElementById("feedback");
 const instructionBox = document.getElementById("instruction-box");
-
-function shuffle(array) {
-  let arr = array.slice();
-  for (let i = arr.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [arr[i], arr[j]] = [arr[j], arr[i]];
-  }
-  return arr;
-}
 
 function renderSentence() {
   sentenceArea.innerHTML = "";
@@ -96,7 +98,7 @@ function renderSentence() {
   // Next button is always enabled and visible
   nextBtn.disabled = false;
 
-  const sentence = sentences[currentSentenceIndex];
+  const sentence = shuffledSentences[currentSentenceIndex];
   let words = sentence.correct.concat(sentence.distractors);
   words = shuffle(words);
 
@@ -141,7 +143,7 @@ function updateUserSentence() {
 }
 
 function checkAnswer() {
-  const sentence = sentences[currentSentenceIndex];
+  const sentence = shuffledSentences[currentSentenceIndex];
   const userWords = selectedWords.map(wi => wi.split("|")[0]);
   if (userWords.length === 0) {
     feedback.innerHTML = "Please select words to form a sentence.";
@@ -167,7 +169,7 @@ function arraysEqual(a, b) {
 }
 
 function nextSentence() {
-  currentSentenceIndex = (currentSentenceIndex + 1) % sentences.length;
+  currentSentenceIndex = (currentSentenceIndex + 1) % shuffledSentences.length;
   renderSentence();
 }
 
