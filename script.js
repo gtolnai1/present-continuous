@@ -67,17 +67,7 @@ const sentences = [
   { type: "question", correct: ["Am", "I", "working", "on", "my", "project", "?"], distractors: ["run", "cat", "."] }
 ];
 
-// Shuffle the questions at the start
-function shuffle(array) {
-  let arr = array.slice();
-  for (let i = arr.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [arr[i], arr[j]] = [arr[j], arr[i]];
-  }
-  return arr;
-}
-
-const shuffledSentences = shuffle(sentences);
+let sessionSentences = [];
 let currentSentenceIndex = 0;
 let selectedWords = [];
 let wordButtons = [];
@@ -87,6 +77,26 @@ const checkBtn = document.getElementById("check-btn");
 const nextBtn = document.getElementById("next-btn");
 const feedback = document.getElementById("feedback");
 const instructionBox = document.getElementById("instruction-box");
+const progressBar = document.getElementById("progress-bar");
+const restartBtn = document.getElementById("restart-btn");
+
+function shuffle(array) {
+  let arr = array.slice();
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+function pickSessionSentences() {
+  sessionSentences = shuffle(sentences).slice(0, 15);
+}
+
+function renderProgressBar() {
+  const percent = ((currentSentenceIndex) / sessionSentences.length) * 100;
+  progressBar.style.width = percent + "%";
+}
 
 function renderSentence() {
   sentenceArea.innerHTML = "";
@@ -95,10 +105,17 @@ function renderSentence() {
   selectedWords = [];
   wordButtons = [];
   checkBtn.disabled = false;
-  // Next button is always enabled and visible
-  nextBtn.disabled = false;
 
-  const sentence = shuffledSentences[currentSentenceIndex];
+  // Hide/show navigation buttons
+  if (currentSentenceIndex < sessionSentences.length - 1) {
+    nextBtn.style.display = "inline-block";
+    restartBtn.style.display = "none";
+  } else {
+    nextBtn.style.display = "none";
+    restartBtn.style.display = "inline-block";
+  }
+
+  const sentence = sessionSentences[currentSentenceIndex];
   let words = sentence.correct.concat(sentence.distractors);
   words = shuffle(words);
 
@@ -121,10 +138,11 @@ function renderSentence() {
     instruction = "Make a <b>question</b>.";
   }
   instructionBox.innerHTML = instruction;
+
+  renderProgressBar();
 }
 
 function selectWord(word, idx) {
-  // If already selected, remove from selectedWords
   const selectedIdx = selectedWords.indexOf(word + "|" + idx);
   if (selectedIdx > -1) {
     selectedWords.splice(selectedIdx, 1);
@@ -137,26 +155,21 @@ function selectWord(word, idx) {
 }
 
 function updateUserSentence() {
-  // Only show the words (not the indices)
   const words = selectedWords.map(wi => wi.split("|")[0]);
   userSentence.textContent = words.join(" ");
 }
 
 function checkAnswer() {
-  const sentence = shuffledSentences[currentSentenceIndex];
+  const sentence = sessionSentences[currentSentenceIndex];
   const userWords = selectedWords.map(wi => wi.split("|")[0]);
   if (userWords.length === 0) {
     feedback.innerHTML = "Please select words to form a sentence.";
-    // Keep checkBtn enabled
     return;
   }
   if (arraysEqual(userWords, sentence.correct)) {
     feedback.innerHTML = "<span style='color:green'>Correct!</span>";
-    // Keep checkBtn enabled for further attempts if desired
-    // Next button is always available
   } else {
     feedback.innerHTML = "<span style='color:red'>Try again!</span>";
-    // Keep checkBtn enabled so students can try again
   }
 }
 
@@ -169,13 +182,22 @@ function arraysEqual(a, b) {
 }
 
 function nextSentence() {
-  currentSentenceIndex = (currentSentenceIndex + 1) % shuffledSentences.length;
+  if (currentSentenceIndex < sessionSentences.length - 1) {
+    currentSentenceIndex++;
+    renderSentence();
+  }
+}
+
+function restartSession() {
+  pickSessionSentences();
+  currentSentenceIndex = 0;
   renderSentence();
 }
 
 checkBtn.addEventListener("click", checkAnswer);
 nextBtn.addEventListener("click", nextSentence);
+restartBtn.addEventListener("click", restartSession);
 
-// On load, always show nextBtn
-nextBtn.style.display = "inline-block";
+// Initialize session
+pickSessionSentences();
 renderSentence();
