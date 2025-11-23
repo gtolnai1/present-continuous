@@ -1,0 +1,142 @@
+/* Updated CSS with light brown background and centering */
+body { 
+  font-family: Arial, sans-serif; 
+  background: #E8D4CF; 
+  padding: 30px;
+  text-align: center;
+  color: #2D1B0F;
+  margin: 0;
+}
+
+/* Main container for better centering */
+body > * {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h2 { 
+  color: #2D1B0F;
+  margin: 20px auto;
+  text-align: center;
+}
+
+p {
+  color: #2D1B0F;
+  text-align: center;
+  margin: 15px auto;
+  line-height: 1.6;
+}
+
+#sentence-area { 
+  margin: 20px auto;
+  text-align: center;
+  padding: 15px;
+}
+
+.word-btn {
+  display: inline-block;
+  margin: 5px;
+  padding: 10px 16px;
+  background: #fff;
+  border: 2px solid #5A3A1B;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background 0.2s;
+  color: #2D1B0F;
+  font-weight: 500;
+}
+
+.word-btn:hover {
+  background: #F5F0ED;
+  border-color: #2D1B0F;
+}
+
+.word-btn.selected { 
+  background: #D6B8AE;
+  border-color: #5A3A1B;
+  color: #2D1B0F;
+}
+
+#user-sentence { 
+  min-height: 40px; 
+  margin: 15px auto; 
+  font-size: 20px;
+  text-align: center;
+  color: #2D1B0F;
+  font-weight: 600;
+  padding: 10px;
+}
+
+#check-btn {
+  margin: 15px 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background: #fff;
+  border: 2px solid #5A3A1B;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #2D1B0F;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+#check-btn:hover {
+  background: #F5F0ED;
+  border-color: #2D1B0F;
+}
+
+#feedback { 
+  font-weight: bold; 
+  margin: 10px auto;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px;
+  min-height: 25px;
+}
+
+#next-btn { 
+  margin: 15px 5px; 
+  padding: 10px 20px; 
+  font-size: 16px;
+  background: #5A3A1B;
+  border: 2px solid #5A3A1B;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #fff;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+#next-btn:hover {
+  background: #2D1B0F;
+  border-color: #2D1B0F;
+}
+
+/* Additional styling for better visual hierarchy */
+strong {
+  color: #5A3A1B;
+}
+
+/* Ensure proper spacing and alignment */
+div {
+  text-align: center;
+}
+
+/* Responsive design considerations */
+@media (max-width: 600px) {
+  body {
+    padding: 20px 15px;
+  }
+  
+  .word-btn {
+    font-size: 16px;
+    padding: 8px 12px;
+    margin: 3px;
+  }
+  
+  #user-sentence {
+    font-size: 18px;
+  }
+}
