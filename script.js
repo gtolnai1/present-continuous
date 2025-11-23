@@ -173,24 +173,29 @@ function checkAnswer() {
   const userWords = userSentence.map(item => item.word);
   const correctWords = currentSentence.correct;
   const feedback = document.getElementById("feedback");
- // document.getElementById("check-btn").disabled = true;
-  document.getElementById("next-btn").style.display = "inline-block";
+  const checkBtn = document.getElementById("check-btn");
+  const nextBtn = document.getElementById("next-btn");
   total++;
   if (arraysEqual(userWords, correctWords)) {
     score++;
-    document.getElementById('check-btn').disabled = true; // Only disable after correct answer
-    document.getElementById('next-btn').style.display = 'inline-block';
     feedback.innerHTML = "✅ Correct!";
     feedback.className = "feedback-correct";
+    checkBtn.disabled = true; // Only disable when correct
+    nextBtn.style.display = "inline-block";
   } else if (userWords.length !== correctWords.length) {
     feedback.innerHTML = "This is not the correct solution. Try again";
     feedback.className = "feedback-incorrect";
+    checkBtn.disabled = false; // Keep enabled after incomplete/incorrect
+    nextBtn.style.display = "none";
   } else {
     feedback.innerHTML = `❌ Incorrect.<br>Your answer: <span class="user-answer">${userWords.join(" ")}</span><br>Correct answer: <span class="correct-answer">${correctWords.join(" ")}</span>`;
     feedback.className = "feedback-incorrect";
+    checkBtn.disabled = false; // Keep enabled after incorrect
+    nextBtn.style.display = "none";
   }
   updateScorePanel();
 }
+
 
 function arraysEqual(a, b) {
   if (a.length !== b.length) return false;
@@ -219,4 +224,5 @@ document.getElementById("next-btn").onclick = nextSentence;
 
 // Initial render
 window.onload = renderSentence;
+
 
